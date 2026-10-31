@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="viewport" content="user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#111813">
+        <meta name="description" content="Последний лифт. Пять невозможных этажей, пассажирка с чемоданом и дорога домой. Интерактивная история для телефона.">
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
-        <title>AIDEASY</title>
+        <title>Последний лифт · Пассажир без этажа</title>
+        <style>
+            html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #111813; overscroll-behavior: none; }
+            body { box-sizing: border-box; padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); }
+            #last-lift-controls button:focus-visible { outline: 3px solid #e2b878; outline-offset: -3px; }
+            #last-lift-controls button:active { background: rgba(226,184,120,.13) !important; }
+            #last-lift-controls button:disabled { cursor: default; }
+            #rotate-phone { display: none; }
+            @media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
+                #rotate-phone { display: flex; position: fixed; inset: 0; z-index: 50; background: #111813; color: #e7e6d3; align-items: center; justify-content: center; flex-direction: column; font: 20px Arial, sans-serif; gap: 16px; text-align: center; }
+                #rotate-phone span { color: #a0ad96; font-size: 15px; }
+                #last-lift-controls { visibility: hidden; }
+            }
+        </style>
     </head>
     <body style="background-color: black">
+        <div id="rotate-phone" role="status">↻ Поверните телефон<span>Эта история живёт в вертикальном экране</span></div>
         <script type="text/javascript" src="js/libs/pixi.js"></script>
         <script type="text/javascript" src="js/libs/pixi-tilemap.js"></script>
         <script type="text/javascript" src="js/libs/pixi-picture.js"></script>
@@ -24,7 +40,6 @@
         <script type="text/javascript" src="js/rpg_sprites.js"></script>
         <script type="text/javascript" src="js/rpg_windows.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
-		<script src="js/libs/pixi3d.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

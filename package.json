@@ -1,12 +1,20 @@
 {
-    "name": "neon",
+    "name": "last-elevator",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Последний лифт — Пассажир без этажа. RPG Maker MV.",
+    "scripts": {
+        "test": "node --test tests/story.test.cjs",
+        "check": "node --check js/plugins/LastLiftStory.js && node --check js/plugins/LastLift.js",
+        "start": "python3 -m http.server 8000 --bind 0.0.0.0"
+    },
     "main": "index.html",
     "js-flags": "--expose-gc",
     "window": {
-        "title": "",
+        "title": "Последний лифт",
         "toolbar": false,
-        "width": 816,
-        "height": 624,
+        "width": 480,
+        "height": 900,
         "icon": "icon/icon.png"
     }
 }
